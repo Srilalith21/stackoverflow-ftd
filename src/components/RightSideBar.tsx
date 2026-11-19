@@ -5,7 +5,7 @@ import { Eye } from "lucide-react";
 const RightSideBar = () => {
   return (
     <aside
-      className={`w-72 lg:w-80 lg:p-4 bg-gray-50 min-h-screen max-lg:hidden`}
+      className={`max-w-72 lg:w-80 lg:p-4 bg-gray-50 min-h-screen max-lg:hidden`}
     >
       <div className="space-y-4 lg:space-y-6">
         <div className="bg-yellow-50 border border-yellow-200 rounded p-3 lg:p-4">

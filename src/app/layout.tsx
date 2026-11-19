@@ -4,17 +4,13 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
-  weight: ["400", "600", "700"], // Specify required weights
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-poppins",
   display: "swap",
+  variable: "--font-poppins",
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={poppins.variable}>
       <body>{children}</body>

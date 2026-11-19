@@ -12,9 +12,11 @@ export default function MainLayout({
       <header>
         <Nav />
       </header>
-      <section className="flex justify-between">
-          <LeftSideBar isopen={false} />
-        <main>{children}</main>
+      <section className="flex lg:gap-6">
+        <LeftSideBar isopen={false} />
+        <main className="min-w-0 flex-1">
+          {children}
+        </main>
         <RightSideBar />
       </section>
       <footer>
