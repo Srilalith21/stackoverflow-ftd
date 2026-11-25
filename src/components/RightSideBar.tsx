@@ -1,12 +1,9 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
-
 const RightSideBar = () => {
   return (
-    <aside
-      className={`max-w-72 lg:w-80 lg:p-4 bg-gray-50 min-h-screen max-lg:hidden`}
-    >
+    <aside className="hidden min-h-screen w-72 shrink-0 bg-gray-50 p-4 xl:block 2xl:w-80 lg:p-6">
       <div className="space-y-4 lg:space-y-6">
         <div className="bg-yellow-50 border border-yellow-200 rounded p-3 lg:p-4">
           <h3 className="font-semibold text-gray-800 mb-3 text-sm lg:text-base">

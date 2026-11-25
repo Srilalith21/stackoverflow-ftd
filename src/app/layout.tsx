@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
+
 import { Poppins } from "next/font/google";
+import "./globals.css";
 
 const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins", // Optional: useful for CSS variables & Tailwind
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body>{children}</body>
+      {/* Apply directly via className, or rely on the CSS variable */}
+      <body className={poppins.className}>{children}</body>
     </html>
   );
 }

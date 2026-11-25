@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import {
   Bookmark,
   Bot,
@@ -12,17 +11,11 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import { Badge } from "./ui/badge";
 
-const Sidebar = ({ isopen }: { isopen: boolean }) => {
+const Sidebar = () => {
   return (
-    <aside
-      className={cn(
-        "top-13.25  w-48 lg:w-64 min-h-screen bg-white shadow-sm border-r transition-transform duration-200 ease-in-out md:translate-x-0",
-        isopen ? "translate-x-0" : "-translate-x-full",
-      )}
-    >
+    <aside className="hidden min-h-screen w-48 shrink-0 border-r bg-white shadow-sm md:block lg:w-64">
       <nav className="p-2 lg:p-4">
         <ul className="space-y-1">
           <li>
