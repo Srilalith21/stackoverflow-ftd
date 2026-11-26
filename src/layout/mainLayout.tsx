@@ -14,9 +14,7 @@ export default function MainLayout({
       </header>
       <section className="flex min-w-0 gap-4 lg:gap-6">
         <LeftSideBar />
-        <main className="min-w-0 flex-1">
-          {children}
-        </main>
+        <main className="min-w-0 flex-1">{children}</main>
         <RightSideBar />
       </section>
       <footer>

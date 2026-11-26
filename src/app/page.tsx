@@ -22,16 +22,16 @@ export default function Home() {
           {/* Dynamic Value Here */}
           <p className="text-lg ">{data.length} questions</p>
           <div className="flex gap-4 border border-gray-300 rounded-lg p-2">
-            <button className="border border-gray-300 px-3 rounded-lg">
+            <button className="border border-gray-300 px-3 rounded-lg hover:bg-gray-300">
               Newest
             </button>
-            <button className="border border-gray-300 px-3 rounded-lg">
+            <button className="border border-gray-300 px-3 rounded-lg hover:bg-gray-300">
               Oldest
             </button>
-            <button className="border border-gray-300 px-3 rounded-lg">
+            <button className="border border-gray-300 px-3 rounded-lg hover:bg-gray-300">
               Most Voted
             </button>
-            <button className="border border-gray-300 px-4 rounded-lg">
+            <button className="border border-gray-300 px-4 rounded-lg hover:bg-gray-300">
               unanswered
             </button>
           </div>

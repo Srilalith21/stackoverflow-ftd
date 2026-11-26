@@ -74,7 +74,8 @@ export default function AskQuestionForm() {
             htmlFor="question-code"
             className="block text-base font-semibold text-gray-900"
           >
-            Code snippet <span className="font-normal text-gray-500">(optional)</span>
+            Code snippet{" "}
+            <span className="font-normal text-gray-500">(optional)</span>
           </label>
           <p className="mb-2 mt-1 text-sm text-gray-600">
             Add a minimal example if code helps explain the problem.

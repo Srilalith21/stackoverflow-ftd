@@ -1,5 +1,5 @@
-"use client";
-
+// "use client";
+import Image from "next/image";
 import { useState } from "react";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
 
@@ -11,6 +11,7 @@ type Answer = {
   createdAt: string;
   isAccepted: boolean;
   author: {
+    avatar?: string;
     name: string;
     username: string;
     reputation: number;
@@ -35,9 +36,11 @@ export default function AnswerCard({ answer }: { answer: Answer }) {
     month: "short",
     day: "numeric",
     year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
     timeZone: "UTC",
   }).format(new Date(answer.createdAt));
-
   return (
     <article className="flex gap-4 border-b border-gray-200 py-6 last:border-b-0">
       <div className="flex w-12 shrink-0 flex-col items-center gap-1 text-gray-600">
@@ -97,7 +100,17 @@ export default function AnswerCard({ answer }: { answer: Answer }) {
                 aria-hidden="true"
                 className="flex size-8 items-center justify-center rounded-full bg-sky-200 font-semibold text-sky-800"
               >
-                {answer.author.name.charAt(0)}
+                {answer.author.avatar ? (
+                  <Image
+                    src={answer.author.avatar}
+                    alt={answer.author.name}
+                    width={32}
+                    height={32}
+                    className="size-full rounded-full"
+                  />
+                ) : (
+                  answer.author.name.charAt(0)
+                )}
               </span>
               <div>
                 <p className="font-medium text-sky-700">{answer.author.name}</p>
