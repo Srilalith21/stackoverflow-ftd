@@ -5,9 +5,14 @@ import { Menu } from "lucide-react";
 import { X } from "lucide-react";
 import { Search } from "lucide-react";
 import { useState } from "react";
+import LeftSideBar from "@/components/LeftSideBar";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  function closeMenu() {
+    setIsOpen(false);
+  }
 
   return (
     <nav className="w-full bg-white shadow-md relative z-50">
@@ -16,9 +21,12 @@ export default function NavBar() {
           {/* Logo and Mobile Menu */}
           <div className="flex items-center gap-3 shrink-0">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              onClick={() => setIsOpen((open) => !open)}
               className="md:hidden p-2 rounded-md hover:bg-gray-100"
               aria-label="Toggle navigation"
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
               {isOpen ? <X size={25} /> : <Menu size={25} />}
             </button>
@@ -78,10 +86,13 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4 space-y-4">
+          <div
+            id="mobile-navigation"
+            className="md:hidden border-t border-gray-200 py-4 space-y-4"
+          >
             <Link
               href="/"
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
               className="block hover:text-blue-600"
             >
               Home
@@ -89,7 +100,7 @@ export default function NavBar() {
 
             <Link
               href="/about"
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
               className="block hover:text-blue-600"
             >
               About
@@ -97,7 +108,7 @@ export default function NavBar() {
 
             <Link
               href="/contact"
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenu}
               className="block hover:text-blue-600"
             >
               Contact
@@ -114,6 +125,7 @@ export default function NavBar() {
             <div className="flex gap-3 sm:hidden">
               <Link
                 href="/signup"
+                onClick={closeMenu}
                 className="flex-1 text-center border border-blue-600 text-blue-600 py-2 rounded-md"
               >
                 Sign Up
@@ -121,11 +133,13 @@ export default function NavBar() {
 
               <Link
                 href="/login"
+                onClick={closeMenu}
                 className="flex-1 text-center bg-gray-200 text-gray-700 py-2 rounded-md"
               >
                 Login
               </Link>
             </div>
+            <LeftSideBar mobile onNavigate={closeMenu} />
           </div>
         )}
       </div>

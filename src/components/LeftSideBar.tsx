@@ -14,14 +14,27 @@ import {
 import Link from "next/link";
 import { Badge } from "./ui/badge";
 
-const Sidebar = () => {
+const Sidebar = ({
+  mobile = false,
+  onNavigate,
+}: {
+  mobile?: boolean;
+  onNavigate?: () => void;
+}) => {
   return (
-    <aside className="hidden min-h-screen w-48 shrink-0 border-r bg-white shadow-sm md:block lg:w-64">
+    <aside
+      className={
+        mobile
+          ? "border-t border-gray-200 pt-4"
+          : "hidden min-h-screen w-48 shrink-0 border-r bg-white shadow-sm md:block lg:w-64"
+      }
+    >
       <nav className="p-2 lg:p-4">
         <ul className="space-y-1">
           <li>
             <Link
               href="/"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Home className="w-4 h-4 mr-2 lg:mr-3" />
@@ -31,6 +44,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="/"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <MessageSquareIcon className="w-4 h-4 mr-2 lg:mr-3" />
@@ -40,6 +54,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="#"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Bot className="w-4 h-4 mr-2 lg:mr-3" />
@@ -52,6 +67,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="/tags"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Tag className="w-4 h-4 mr-2 lg:mr-3" />
@@ -61,6 +77,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="/users"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Users className="w-4 h-4 mr-2 lg:mr-3" />
@@ -70,6 +87,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="#"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Bookmark className="w-4 h-4 mr-2 lg:mr-3" />
@@ -79,6 +97,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="#"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Trophy className="w-4 h-4 mr-2 lg:mr-3" />
@@ -94,6 +113,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="#"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <MessageSquare className="w-4 h-4 mr-2 lg:mr-3" />
@@ -103,6 +123,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="#"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <FileText className="w-4 h-4 mr-2 lg:mr-3" />
@@ -113,6 +134,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="#"
+              onClick={onNavigate}
               className="flex items-center px-2 py-2 text-gray-700 hover:bg-gray-100 rounded text-sm"
             >
               <Building className="w-4 h-4 mr-2 lg:mr-3" />
